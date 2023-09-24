@@ -1,0 +1,40 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 07/14/2023 10:21:53 AM
+// Design Name: 
+// Module Name: decade_counter_tb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+module decade_counter_tb();
+reg clk,rst;
+wire [3:0] count ;
+
+decade_counter dut(rst,clk,count);
+
+initial 
+   begin
+         clk = 1'b0;
+         rst =1'b0;
+         #20
+         rst = 1'b1;
+         #10
+         rst = 1'b0;
+   end
+
+always #5 clk = ~clk;
+
+
+endmodule   
